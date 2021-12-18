@@ -5,11 +5,95 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!-- 导入样式 -->
+    <link rel="stylesheet" href="./assets/css/login.css">
+    <link rel="stylesheet" href="./assets/lib/layui/css/layui.css">
+    <title>大事件-登录/注册</title>
 </head>
 
 <body>
+    <!-- 头部logo区域-->
+    <div class="layui-main">
+        <img src="./assets/images/logo.png" alt="" />
+    </div>
 
+    <!-- 登录与注册区域 -->
+    <div class="loginAddRegBox">
+        <!-- 顶部图片 -->
+        <div class="title-box"></div>
+        <!-- 登录区域 -->
+        <div class="login-box">
+            <!-- 使用layui插件 登录的表单-->
+            <form class="layui-form" id="form_login">
+                <!-- 1.用户名 -->
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-username"></i>
+                    <input type="text" name="username" required lay-verify="required" placeholder="请输入用户名"
+                           autocomplete="off" class="layui-input">
+                </div>
+                <!-- 2.密码 -->
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-password"></i>
+                    <input type="password" name="password" required lay-verify="required|pwd" placeholder="请输入密码"
+                           autocomplete="off" class="layui-input">
+                </div>
+                <!-- 3.按钮 -->
+                <div class="layui-form-item">
+                    <!-- 注意表单 提交按钮 与 普通按钮的区别 lay-submit -->
+                    <button class="layui-btn layui-btn-fluid layui-btn-normal" lay-submit>登录</button>
+                </div>
+
+                <div class="layui-form-item links">
+                    <!-- href="javascript:;" =>防止跳转 -->
+                    <a href="javascript:;" id="link_reg">注册账号</a>
+                </div>
+            </form>
+        </div>
+
+        <!-- 注册区域 -->
+        <div class="reg-box">
+            <!-- 注册的表单-->
+            <form class="layui-form" id="form_reg">
+                <!-- 1.用户名 -->
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-username"></i>
+                    <input type="text" name="username" required lay-verify="required" placeholder="请输入用户名"
+                           autocomplete="off" class="layui-input">
+                </div>
+                <!-- 2.密码 -->
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-password"></i>
+                    <input type="password" name="password" required lay-verify="required|pwd" placeholder="请输入密码"
+                           autocomplete="off" class="layui-input">
+                </div>
+                <!-- 再次输入密码 -->
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-password"></i>
+                    <input type="password" name="repassword" required lay-verify="required|pwd|repwd"
+                           placeholder="请再次输入密码" autocomplete="off" class="layui-input">
+                </div>
+                <!-- 3.注册按钮 -->
+                <div class="layui-form-item">
+                    <!-- 注意表单 提交按钮 与 普通按钮的区别 lay-submit -->
+                    <button class="layui-btn layui-btn-fluid layui-btn-normal" lay-submit>注册</button>
+                </div>
+                <!-- 切换视图按钮 -->
+                <div class="layui-form-item links">
+                    <!-- href="javascript:;" =>防止跳转 -->
+                    <a href="javascript:;" id="ling_login">去登录</a>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <!-- 导入脚本 -->
+    <script src="./assets/lib/layui/layui.all.js"></script>
+    <script src="./assets/lib/jquery.js"></script>
+    <!-- 该函数依赖与jquery，但要在login之前执行，只能放在此位置 -->
+    <script src="./assets/js/baseapi.js"></script>
+    <!-- 注意：自己写的js文件引入，一般放在最后，防止覆盖 -->
+    <script src="./assets/js/login.js"></script>
 </body>
 
 </html>
