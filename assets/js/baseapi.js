@@ -13,7 +13,7 @@ $.ajaxPrefilter(function (options) {
     // 全局统一挂载complete 函数
     options.complete = function (res) {
         // 阻止用户不登录账户，直接访问index文件,
-        console.log(res);
+        // console.log(res);
         // 判断状态码，查看是否成功拿到服务器返回的数据
         if (res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
             // 1.强制清空token

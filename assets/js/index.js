@@ -5,7 +5,6 @@ $(function () {
 
 
 
-
     let layer = layui.layer;
     // 设置点击退出事件
     $('#btnLogout').on('click', function () {
